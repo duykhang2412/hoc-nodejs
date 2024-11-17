@@ -4,8 +4,8 @@ const { getHomePage, getABC, getsample } = require('../controllers/homeControlle
 
 router.get('/', getHomePage);
 
-router.get('/', getABC);
+router.get('/abc', getABC);
 
-router.get('/', getsample);
+router.get('/test', getsample);
 
 module.exports = router;
