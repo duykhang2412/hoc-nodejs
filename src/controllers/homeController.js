@@ -18,6 +18,20 @@ const getABC = (req, res) => {
 const getsample = (req, res) => {
     res.render('sample.ejs')
 }
+const postCreateUser = (req, res) => {
+    let { email, name, city } = req.body;
+    console.log("req.body =", email, "name = ", name, "city = ", city);
+    connection.query(
+        `INSERT INTO Users (email, name, city)
+        VALUES (?, ?, ?)`,
+        [email, name, city],
+        function (err, results) {
+            console.log(results);
+            res.send(' Created Success ');
+        }
+    )
+}
+
 module.exports = {
-    getHomePage, getABC, getsample
+    getHomePage, getABC, getsample, postCreateUser
 }

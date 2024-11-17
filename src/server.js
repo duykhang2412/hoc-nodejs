@@ -8,6 +8,10 @@ const webrouter = require('./routes/web');
 const port = process.env.PORT;
 const hostname = process.env.HOST_NAME;
 const connection = require('./config/database');
+
+//config req.body
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 //config template
 configViewEngine(app);
 
