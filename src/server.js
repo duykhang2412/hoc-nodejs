@@ -18,12 +18,12 @@ configViewEngine(app);
 //khai bao route
 app.use('/', webrouter)
 // simple query
-connection.query(
-    'SELECT * from Users u ',
-    function (err, results, fields) {
-        console.log("result = ", results);
-    }
-)
+// connection.query(
+//     'SELECT * from Users u ',
+//     function (err, results, fields) {
+//         console.log("result = ", results);
+//     }
+// )
 app.listen(port, hostname, () => {
     console.log(`Example app listening on port ${port}`)
 })
